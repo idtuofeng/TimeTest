@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<!--
+  @param showModal:boolean 显示/隐藏 example->false/true
+  @param date:string 默认日期：'2018-01-02'格式
+  @param propA:string 默认时分：'10:30'格式
+  @param enableTime:boolean 是否显示时分选择 example->false/true
+  @param bindonselectdate:functionName 选择完毕后触发的函数
+-->
+<view class="container">
+    <view class="row">
+    <view class="label">时间选择</view>
+    <date-picker date="{{'2018-01-02'}}" bindonselectdate="handleSelecteDate" />
+    <date-picker showModal="{{true}}"  date="{{'2018-01-02'}}" propA="{{'10:30'}}"  bindonselectdate="handleSelecteDate" enableTime="{{true}}"/>
+    </view>
+</view>
+<!--js -->
+ handleSelecteDate(e) {
+   consoel.log(e.detail.date)
+ }
+<!--执行上面之后会返回日期控件所展示的时间 -->
